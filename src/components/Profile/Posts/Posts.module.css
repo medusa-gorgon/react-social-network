@@ -10,3 +10,11 @@
   font-size: 30px;
   line-height: 1;
 }
+.form {
+  padding-bottom: 15px;
+}
+
+.content__block {
+  display: flex;
+  flex-direction: column-reverse;
+}

@@ -4,14 +4,15 @@ import s from './DialogItem.module.css';
 const DialogItem = (props) => {
   let path = '/dialogs/' + props.id;
   return (
-    <div>
-      <div className={s.item} activeClassName={s.activeLink}>
-        {/* + ' ' + s.active*/}
-        <NavLink className={s.link} to={path}>
-          {props.name}
-        </NavLink>
-      </div>
+    // <div>
+    <div className={s.item} activeClassName={s.activeLink}>
+      {/* + ' ' + s.active*/}
+      <div className={s.pic} style={{ backgroundImage: `url(${props.pic})` }}></div>
+      <NavLink className={s.link} to={path}>
+        {props.name}
+      </NavLink>
     </div>
+    // </div>
   );
 };
 

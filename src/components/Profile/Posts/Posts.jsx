@@ -16,7 +16,7 @@ const Posts = (props) => {
           <Submit />
         </div>
       </div>
-      {postsElements}
+      <div className={s.content__block}>{postsElements}</div>
     </div>
   );
 };

@@ -1,7 +1,19 @@
+.message__block {
+  display: flex;
+  align-items: center;
+}
+
 .message {
   padding: 10px;
   border: solid 3px #433633;
   border-radius: 20px;
   width: fit-content;
-  margin: 10px 0;
+  margin: 6px 0;
+}
+.pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
 }

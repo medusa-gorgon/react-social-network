@@ -8,11 +8,34 @@
 }
 
 .messages {
-  border-left: 2px #433633 solid;
-  padding-left: 20px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: scroll;
 }
 
+.messages::-webkit-scrollbar {
+  background-color: #e3e0d7;
+  width: 8px;
+  opacity: 0;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  transition: all 0.3s;
+  border-radius: 7px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background-color: #726360;
+}
+.message__box {
+  border-left: 2px #433633 solid;
+  padding: 0 0 10px 20px;
+}
 .form {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  padding: 10px 0;
 }

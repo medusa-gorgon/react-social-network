@@ -11,8 +11,7 @@
 }
 
 .button__block {
-  padding: 15px 0 15px 15px;
-  width: 90%;
+  padding: 15px 20px 15px 15px;
   display: flex;
   justify-content: flex-end;
 }
