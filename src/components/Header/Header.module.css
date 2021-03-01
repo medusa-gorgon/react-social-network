@@ -1,0 +1,15 @@
+.header {
+  grid-area: h;
+  background-color: #433633; /*#433633, #59b6a7 -green*/
+}
+
+.logo__pic {
+  box-sizing: border-box;
+  width: 80px;
+  padding: 5px 15px;
+  transition: all 0.2s;
+}
+
+.logo__pic:hover {
+  opacity: 0.6;
+}

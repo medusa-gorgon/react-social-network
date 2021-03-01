@@ -1,0 +1,19 @@
+.item {
+  padding: 5px 0;
+}
+
+.link {
+  padding: 10px;
+  font-size: 16px;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.link:hover {
+  color: #433633;
+  font-size: 20px;
+}
+
+.active {
+  font-size: 30px;
+}

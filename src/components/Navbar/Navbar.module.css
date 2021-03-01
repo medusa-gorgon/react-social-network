@@ -1,0 +1,21 @@
+.nav {
+  grid-area: n;
+  background-color: #433633; /*#5c5552*/
+  padding-top: 15px;
+  opacity: 0.9;
+}
+
+.link {
+  color: #e5f77d; /*#e5f77d*/
+  font-family: 'Montserrat', sans-serif;
+  font-size: 27px;
+  padding-left: 15px;
+  transition: all 0.2s;
+}
+
+.link:hover {
+  color: #59b6a7;
+}
+.activeLink {
+  color: #59b6a7;
+}

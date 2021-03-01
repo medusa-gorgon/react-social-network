@@ -1,0 +1,9 @@
+.head__img {
+  height: 350px;
+  width: 100%;
+  background-image: url('https://cdn.europosters.eu/image/1300/wall-murals/coffee-beans-416x254-cm-130g-m2-vlies-non-woven-i44951.jpg');
+  opacity: 0.6;
+  background-size: cover;
+  position: relative;
+  /* z-index: 1; */
+}

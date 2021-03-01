@@ -1,0 +1,18 @@
+.button {
+  padding: 0.625rem;
+  min-width: 6.25rem;
+  background-color: #59b6a7;
+  transition: all 0.2s;
+  border-radius: 0.3125rem;
+}
+
+.button:hover {
+  background-color: #433633;
+}
+
+.button__block {
+  padding: 15px 0 15px 15px;
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,28 @@
+.posts {
+  padding: 30px 0 0 10px;
+}
+
+.posts__title {
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.button__block {
+  padding: 15px 0 15px 15px;
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pic {
+  background-image: url('https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg');
+  background-size: cover;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
