@@ -6,7 +6,7 @@ const UserInfo = () => {
       <div className={s.avatar}>
         <img
           className={s.avatar__img}
-          src='https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg'
+          src='http://joombig.com/demo-extensions1/images/gallery_slider/Swan_large.jpg'
           alt='avatar'
         />
       </div>

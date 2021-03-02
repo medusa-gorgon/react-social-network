@@ -64,5 +64,10 @@ let state = {
       { id: 5, message: 'Haha Yana' },
     ],
   },
+  // sidebar: {
+  //   friendsData : [
+  //     {name:},
+  //   ]
+  // }
 };
 export default state;

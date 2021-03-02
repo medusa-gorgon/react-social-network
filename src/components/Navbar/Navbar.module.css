@@ -5,7 +5,8 @@
   opacity: 0.9;
 }
 
-.link {
+.link,
+.friends__link {
   color: #e5f77d; /*#e5f77d*/
   font-family: 'Montserrat', sans-serif;
   font-size: 27px;
@@ -14,9 +15,23 @@
   transition: all 0.2s;
 }
 
-.link:hover {
+.friends__link {
+  font-size: 37px;
+}
+
+.link__block {
+  padding-top: 30px;
+}
+
+.link:hover,
+.friends__link:hover {
   color: #59b6a7;
 }
 .activeLink {
   color: #59b6a7;
+}
+.friends {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }

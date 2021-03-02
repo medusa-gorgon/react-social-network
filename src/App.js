@@ -20,7 +20,7 @@ const App = (props) => {
 
         <div className='app__container'>
           <Header />
-          <Navbar />
+          <Navbar state={props.state.messagesPage} />
           <div className='app__content'>
             <Route path='/profile' render={() => <Profile state={props.state.profilePage} />} />
             <Route path='/dialogs' render={() => <Dialogs state={props.state.messagesPage} />} />

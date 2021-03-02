@@ -1,6 +1,8 @@
 .header {
   grid-area: h;
   background-color: #433633; /*#433633, #59b6a7 -green*/
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 .logo__pic {
