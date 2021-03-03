@@ -5,18 +5,19 @@ import Post from './Post/Post';
 import s from './Posts.module.css';
 
 const Posts = (props) => {
-  let postsElements = props.postsData.map((post) => <Post message={post.message} likeCount={post.likeCount} />);
+  let postsElements = props.state.postsData.map((post) => <Post message={post.message} likeCount={post.likeCount} />);
 
   let newPostElement = React.createRef();
 
   let addPost = () => {
     let text = newPostElement.current.value;
-    props.addPost(text);
+    props.dispatch({ type: 'ADD-POST' });
   };
 
   let onPostChange = () => {
+    // debugger;
     let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+    props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text });
   };
 
   return (
@@ -28,7 +29,7 @@ const Posts = (props) => {
         <div className={s.textarea__block}>
           <textarea
             onChange={onPostChange}
-            value={props.newPostText}
+            value={props.state.newPostText}
             ref={newPostElement}
             className={s.textarea}
             type='textarea'

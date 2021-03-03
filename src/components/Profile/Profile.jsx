@@ -10,12 +10,7 @@ const Profile = (props) => {
         {/* <HeadPicture /> */}
         <div className={s.profile__content}>
           <UserInfo />
-          <Posts
-            postsData={props.state.postsData}
-            addPost={props.addPost}
-            newPostText={props.state.newPostText}
-            updateNewPostText={props.updateNewPostText}
-          />
+          <Posts state={props.profilePage} dispatch={props.dispatch} />
         </div>
       </div>
     </div>
