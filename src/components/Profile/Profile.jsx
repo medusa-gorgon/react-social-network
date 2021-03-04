@@ -1,7 +1,7 @@
 // import HeadPicture from './HeadPicture/HeadPicture';
-import Posts from './Posts/Posts';
 import UserInfo from './UserInfo/UserInfo';
 import s from './Profile.module.css';
+import PostsContainer from './Posts/PostsContainer';
 
 const Profile = (props) => {
   return (
@@ -10,7 +10,7 @@ const Profile = (props) => {
         {/* <HeadPicture /> */}
         <div className={s.profile__content}>
           <UserInfo />
-          <Posts state={props.profilePage} dispatch={props.dispatch} />
+          <PostsContainer store={props.store} />
         </div>
       </div>
     </div>

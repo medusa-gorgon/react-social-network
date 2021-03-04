@@ -7,24 +7,20 @@ import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/mes
 import React from 'react';
 
 const Dialogs = (props) => {
-  let state = props.store.getState().messagesPage;
-
-  let dialogsElements = state.dialogsData.map((dialog) => (
+  let dialogsElements = props.messagesPage.dialogsData.map((dialog) => (
     <DialogItem name={dialog.name} id={dialog.id} pic={dialog.pic} />
   ));
 
-  let messagesElements = state.messagesData.map((message) => (
+  let messagesElements = props.messagesPage.messagesData.map((message) => (
     <Message message={message.message} id={message.id} pic={message.pic} />
   ));
 
-  let newMessageBody = state.newMessageBody;
-
   let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreator());
+    props.sendMessage();
   };
   let onNewMessageChange = (e) => {
     let body = e.target.value;
-    props.store.dispatch(updateNewMessageBodyCreator(body));
+    props.updateNewMessageBody(body);
   };
 
   return (
@@ -36,7 +32,7 @@ const Dialogs = (props) => {
           <textarea
             className={s.textarea}
             type='textarea'
-            value={newMessageBody}
+            value={props.messagesPage.newMessageBody}
             onChange={onNewMessageChange}
             placeholder='write your next message...'
           />
