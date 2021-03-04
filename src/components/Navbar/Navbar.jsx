@@ -3,9 +3,10 @@ import FriendItem from './FriendItem';
 import s from './Navbar.module.css';
 
 const Navbar = (props) => {
-  let friendsElements = props.state.dialogsData.map((friend) => (
-    <FriendItem name={friend.name} id={friend.id} pic={friend.pic} />
-  ));
+  // let friendsElements = props.state.dialogsData.map((friend) => (
+  //   <FriendItem name={friend.name} id={friend.id} pic={friend.pic} />
+  // ));
+
   return (
     <nav className={s.nav}>
       <ul className={s.list}>
@@ -15,7 +16,7 @@ const Navbar = (props) => {
           </NavLink>
         </li>
         <li className={s.item}>
-          <NavLink className={s.link} activeClassName={s.activeLink} to='/dialogs'>
+          <NavLink className={s.link} activeClassName={s.activeLink} to='/messages'>
             Messages
           </NavLink>
         </li>
@@ -35,12 +36,12 @@ const Navbar = (props) => {
           </NavLink>
         </li>
       </ul>
-      <div className={s.link__block}>
+      {/* <div className={s.link__block}>
         <NavLink className={s.friends__link} to='/friends'>
           Friends
         </NavLink>
       </div>
-      <div className={s.friends}>{friendsElements}</div>
+      <div className={s.friends}>{friendsElements}</div> */}
     </nav>
   );
 };

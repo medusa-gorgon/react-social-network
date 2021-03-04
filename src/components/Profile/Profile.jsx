@@ -10,7 +10,7 @@ const Profile = (props) => {
         {/* <HeadPicture /> */}
         <div className={s.profile__content}>
           <UserInfo />
-          <PostsContainer store={props.store} />
+          <PostsContainer />
         </div>
       </div>
     </div>
