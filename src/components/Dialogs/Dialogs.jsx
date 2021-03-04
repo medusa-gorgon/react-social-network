@@ -3,39 +3,45 @@ import s from './Dialogs.module.css';
 // import Submit from '../Profile/Posts/Submit';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/messages-reducer';
 import React from 'react';
 
 const Dialogs = (props) => {
-  let dialogsElements = props.state.dialogsData.map((dialog) => (
+  let state = props.store.getState().messagesPage;
+
+  let dialogsElements = state.dialogsData.map((dialog) => (
     <DialogItem name={dialog.name} id={dialog.id} pic={dialog.pic} />
   ));
-  let messagesElements = props.state.messagesData.map((message) => (
+
+  let messagesElements = state.messagesData.map((message) => (
     <Message message={message.message} id={message.id} pic={message.pic} />
   ));
 
-  let newMessageElement = React.createRef();
+  let newMessageBody = state.newMessageBody;
 
-  let addMessage = () => {
-    let text = newMessageElement.current.value;
-    alert(text);
+  let onSendMessageClick = () => {
+    props.store.dispatch(sendMessageCreator());
+  };
+  let onNewMessageChange = (e) => {
+    let body = e.target.value;
+    props.store.dispatch(updateNewMessageBodyCreator(body));
   };
 
   return (
     <div className={s.dialogs}>
-      <div style={{ backgroundImage: 'url({props.pic})' }} className={s.dialogs__items}>
-        {dialogsElements}
-      </div>
+      <div className={s.dialogs__items}>{dialogsElements}</div>
       <div className={s.message__box}>
         <div className={s.messages}>{messagesElements}</div>
         <div className={s.form}>
           <textarea
-            ref={newMessageElement}
             className={s.textarea}
             type='textarea'
+            value={newMessageBody}
+            onChange={onNewMessageChange}
             placeholder='write your next message...'
           />
           <div className={s.button__block}>
-            <div onClick={addMessage} className={s.button__wrap}>
+            <div onClick={onSendMessageClick} className={s.button__wrap}>
               <button className={s.button} type='submit'>
                 Send
               </button>

@@ -50,6 +50,7 @@ a {
   outline: none;
   text-decoration: none;
   color: #0d95de;
+  cursor: pointer;
 }
 
 ul {

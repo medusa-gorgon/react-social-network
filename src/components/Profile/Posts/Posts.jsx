@@ -2,21 +2,18 @@
 // import Textarea from './Textarea';
 import React from 'react';
 import Post from './Post/Post';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/state';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profile-reducer';
 import s from './Posts.module.css';
 
 const Posts = (props) => {
   let postsElements = props.state.postsData.map((post) => <Post message={post.message} likeCount={post.likeCount} />);
 
-  let newPostElement = React.createRef();
-
   let addPost = () => {
-    let text = newPostElement.current.value;
     props.dispatch(addPostActionCreator());
   };
 
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
+  let onPostChange = (e) => {
+    let text = e.target.value;
     props.dispatch(updateNewPostTextActionCreator(text));
   };
 
@@ -30,7 +27,6 @@ const Posts = (props) => {
           <textarea
             onChange={onPostChange}
             value={props.state.newPostText}
-            ref={newPostElement}
             className={s.textarea}
             type='textarea'
             placeholder='write what comes to mind...'
