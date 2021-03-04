@@ -1,4 +1,8 @@
-const sidebarReducer = (state, action) => {
+let initialState = {
+  friendsData: [],
+};
+
+const sidebarReducer = (state = initialState, action) => {
   return state;
 };
 
