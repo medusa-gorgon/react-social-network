@@ -4,25 +4,50 @@ import userPhoto from '../../assets/images/user.jpg';
 import { Component } from 'react';
 
 class Users extends Component {
-  constructor(props) {
-    super(props);
-    axios.get('https://social-network.samuraijs.com/api/1.0/users').then((response) => {
-      this.props.setUsers(response.data.items);
-    });
+  componentDidMount() {
+    axios
+      .get(
+        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
+      )
+      .then((response) => {
+        this.props.setUsers(response.data.items);
+        this.props.setTotalUsersCount(response.data.totalCount);
+      });
   }
-  // getUsers = () => {
-  //   if (this.props.users.length === 0) {
-  //     axios.get('https://social-network.samuraijs.com/api/1.0/users').then((response) => {
-  //       this.props.setUsers(response.data.items);
-  //     });
-  //   }
-  // };
+  onPageChanged = (pageNumber) => {
+    this.props.setCurrentPage(pageNumber);
+    axios
+      .get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+      .then((response) => {
+        this.props.setUsers(response.data.items);
+      });
+  };
   render() {
+    let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+
+    let pages = [];
+    for (let i = 1; i <= pagesCount; i++) {
+      pages.push(i);
+    }
     return (
       <div className={s.users}>
-        {/* <button onClick={this.getUsers} className={s.getUsers}>
-          Get users
-        </button> */}
+        <div className={s.pagination}>
+          {pages.map((p) => {
+            return (
+              <a
+                onClick={() => {
+                  {
+                    this.onPageChanged(p);
+                  }
+                }}
+                href='#'
+                className={this.props.currentPage === p ? `${s.page} ${s.selectedPage}` : s.page}
+              >
+                {p}
+              </a>
+            );
+          })}
+        </div>
         {this.props.users.map((u) => {
           return (
             <div className={s.user} key={u.id}>
