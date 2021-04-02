@@ -1,34 +1,13 @@
-.user {
-  display: flex;
+.users__content {
+  padding: 15px;
 }
 
-.desc {
-  display: flex;
-}
-
-.profile__pic {
-  width: 50px;
-  height: 50px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-}
-
-.button {
-  background-color: #59b6a7;
-  padding: 5px;
-  border-radius: 5px;
-  transition: all 0.2s;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.button:hover {
-  background-color: #433633;
-}
 .pagination {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  width: 50vw;
+  overflow-x: scroll;
+  margin: 0 auto;
 }
 
 .page {
@@ -37,7 +16,7 @@
   border-radius: 5px;
   transition: all 0.2s;
   font-size: 16px;
-  min-width: 20px;
+  min-width: 40px;
   line-height: 1;
   color: black;
   text-align: center;
@@ -50,4 +29,64 @@
 .page:hover {
   background-color: #433633;
   color: white;
+}
+
+.user {
+  display: flex;
+  padding: 10px;
+}
+
+.desc {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.profile__pic {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+}
+
+.button__block {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  background-color: #59b6a7;
+  border-radius: 5px;
+  transition: all 0.2s;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.button:hover {
+  background-color: #433633;
+}
+
+.desc__block {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 10px 20px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.status {
+  font-style: italic;
+  font-size: 15px;
+  /* align-self: flex-end; */
+}
+
+.location {
+  padding: 0 10px;
 }
