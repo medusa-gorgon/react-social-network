@@ -4,14 +4,14 @@ import './Normalize.css';
 import './Adjustment.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route } from 'react-router-dom';
-import HeadPicture from './components/Profile/HeadPicture/HeadPicture';
+import HeadPicture from './components/Header/HeadPicture/HeadPicture.jsx';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 const App = (props) => {
   return (
@@ -23,7 +23,7 @@ const App = (props) => {
           <Header />
           <Navbar /> {/*state={props.state.messagesPage}*/}
           <div className='app__content'>
-            <Route path='/profile' render={() => <Profile />} />
+            <Route path='/profile' render={() => <ProfileContainer />} />
             <Route path='/messages' render={() => <DialogsContainer />} />
             <Route path='/news' render={() => <News />} />
             <Route path='/music' render={() => <Music />} />

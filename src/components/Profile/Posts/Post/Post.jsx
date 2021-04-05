@@ -1,10 +1,19 @@
 import s from './Post.module.css';
+import userPhoto from '../../../../assets/images/user.png';
 
 const Post = (props) => {
   return (
     <div className={s.post}>
       <div className={s.pic__block}>
-        <div className={s.pic} alt='avatar'></div>
+        <div
+          className={s.pic}
+          style={{
+            backgroundImage: `url(${
+              props.profile != null && props.profile.photos.small != null ? props.profile.photos.small : userPhoto
+            })`,
+          }}
+          alt='avatar'
+        ></div>
       </div>
 
       <span className={s.post}>{props.message}</span>

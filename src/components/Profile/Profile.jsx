@@ -9,8 +9,8 @@ const Profile = (props) => {
       <div className={s.profile}>
         {/* <HeadPicture /> */}
         <div className={s.profile__content}>
-          <UserInfo />
-          <PostsContainer />
+          <UserInfo profile={props.profile} />
+          <PostsContainer profile={props.profile} />
         </div>
       </div>
     </div>
