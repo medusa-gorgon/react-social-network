@@ -6,10 +6,11 @@ const UserInfo = (props) => {
   if (!props.profile) {
     return <Preloader />;
   }
-  let arr = [];
+
   let addContacts = () => {
+    let arr = [];
     for (let [key, value] of Object.entries(props.profile.contacts)) {
-      if (value !== null) {
+      if (value !== null && value !== '') {
         arr.push(
           <li className={s.contact}>
             <div className={s.contact_key}>{`${key}: `}</div>
@@ -50,7 +51,7 @@ const UserInfo = (props) => {
           </li>
           <li className={s.item}>{props.profile.aboutMe != null && <div>About me: "{props.profile.aboutMe}"</div>}</li>
           <li className={s.item}>
-            <ul>{addContacts()}</ul>
+            <ul className={s.contacts__list}>{addContacts()}</ul>
           </li>
         </ul>
       </div>
