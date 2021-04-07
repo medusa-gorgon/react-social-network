@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import './Normalize.css';
 import './Adjustment.css';
-import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import News from './components/News/News';
 import Music from './components/Music/Music';
@@ -12,6 +11,7 @@ import HeadPicture from './components/Header/HeadPicture/HeadPicture.jsx';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 const App = (props) => {
   return (
@@ -20,7 +20,7 @@ const App = (props) => {
         <HeadPicture />
 
         <div className='app__container'>
-          <Header />
+          <HeaderContainer />
           <Navbar /> {/*state={props.state.messagesPage}*/}
           <div className='app__content'>
             <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
