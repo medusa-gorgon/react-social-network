@@ -3,8 +3,8 @@ import s from './Dialogs.module.css';
 // import Submit from '../Profile/Posts/Submit';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/messages-reducer';
 import React from 'react';
+import { Redirect } from 'react-router';
 
 const Dialogs = (props) => {
   let dialogsElements = props.messagesPage.dialogsData.map((dialog) => (
@@ -22,7 +22,7 @@ const Dialogs = (props) => {
     let body = e.target.value;
     props.updateNewMessageBody(body);
   };
-
+  if (!props.isAuth) return <Redirect to={'/login'} />;
   return (
     <div className={s.dialogs}>
       <div className={s.dialogs__items}>{dialogsElements}</div>
