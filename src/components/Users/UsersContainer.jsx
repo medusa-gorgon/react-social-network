@@ -12,6 +12,7 @@ import { toggleFollowingInProgress } from '../../redux/users-reducer';
 import { Component } from 'react';
 import Users from './Users';
 import Preloader from '../common/Preloader';
+import { compose } from 'redux';
 
 class UsersContainer extends Component {
   componentDidMount() {
@@ -50,13 +51,15 @@ let mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {
-  follow,
-  unfollow,
-  setUsers,
-  setCurrentPage,
-  setTotalUsersCount,
-  toggleIsFetching,
-  toggleFollowingInProgress,
-  getUsers: getUsersThunkCreator,
-})(UsersContainer);
+export default compose(
+  connect(mapStateToProps, {
+    follow,
+    unfollow,
+    setUsers,
+    setCurrentPage,
+    setTotalUsersCount,
+    toggleIsFetching,
+    toggleFollowingInProgress,
+    getUsers: getUsersThunkCreator,
+  })
+)(UsersContainer);
