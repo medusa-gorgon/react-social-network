@@ -1,6 +1,7 @@
 import Preloader from '../../common/Preloader';
 import s from './UserInfo.module.css';
 import userPhoto from '../../../assets/images/user.png';
+import ProfileStatus from './ProfileStatus';
 
 const UserInfo = (props) => {
   if (!props.profile) {
@@ -41,6 +42,7 @@ const UserInfo = (props) => {
         <div className={s.name__block}>
           <div className={s.name}>{props.profile.fullName}</div>
         </div>
+        <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
         <ul className={s.list}>
           <li className={s.item}>
             {

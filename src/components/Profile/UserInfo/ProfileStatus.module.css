@@ -1,0 +1,15 @@
+.input__block {
+  margin: 0 20px 40px 20px;
+}
+
+.input {
+  background-color: #433633;
+  color: #e3e0d7;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.status {
+  color: #433633;
+  margin: 0 20px 40px 20px;
+}
