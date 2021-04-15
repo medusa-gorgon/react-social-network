@@ -6,7 +6,8 @@
   background-color: #433633;
   color: #e3e0d7;
   border-radius: 5px;
-  width: 250px;
+  width: 400px;
+  padding: 5px;
 }
 
 .status {
