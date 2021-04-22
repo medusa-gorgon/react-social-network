@@ -42,7 +42,7 @@ export const loginAC = (userId, email, login) => ({ type: LOGIN, payload: { user
 
 export const getAuthUserData = () => {
   return (dispatch) => {
-    authAPI.me().then((data) => {
+    return authAPI.me().then((data) => {
       if (data.resultCode === 0) {
         let { id, email, login } = data.data;
         dispatch(setAuthUserData(id, email, login, true));
