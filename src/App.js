@@ -35,13 +35,13 @@ class App extends Component {
           <HeaderContainer />
           <Navbar /> {/*state={props.state.messagesPage}*/}
           <div className='app__content'>
+            <Route path='/login' render={() => <Login />} />
             <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
             <Route path='/messages' render={() => <DialogsContainer />} />
             <Route path='/news' render={() => <News />} />
             <Route path='/music' render={() => <Music />} />
             <Route path='/settings' render={() => <Settings />} />
             <Route path='/users' render={() => <UsersContainer />} />
-            <Route path='/login' render={() => <Login />} />
           </div>
         </div>
       </div>
