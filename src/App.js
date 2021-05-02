@@ -13,11 +13,14 @@ import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import Preloader from './components/common/Preloader';
 import { initializeApp } from './redux/app-reducer';
+import store from './redux/redux-store';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
   componentDidMount() {
@@ -54,4 +57,18 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default compose(withRouter, connect(mapStateToProps, { initializeApp }))(App);
+let AppContainer = compose(withRouter, connect(mapStateToProps, { initializeApp }))(App);
+
+const MainApp = (props) => {
+  return (
+    <BrowserRouter>
+      <Provider store={store}>
+        <React.StrictMode>
+          <AppContainer />;
+        </React.StrictMode>
+      </Provider>
+    </BrowserRouter>
+  );
+};
+
+export default MainApp;
