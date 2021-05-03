@@ -1,8 +1,7 @@
 .pagination {
   display: flex;
-  justify-content: flex-start;
-  width: 50vw;
-  overflow-x: scroll;
+  justify-content: center;
+  /* width: 50vw; */
   margin: 0 auto;
 }
 
@@ -25,4 +24,20 @@
 .page:hover {
   background-color: #433633;
   color: white;
+}
+
+.arrow__left {
+  transform: scale(-1, 1);
+}
+
+.arrow {
+  transition: all 0.2s;
+  color: #433633;
+  font-size: 16px;
+  min-width: 25px;
+}
+
+.arrow:hover {
+  /* color: #59b6a7; */
+  font-size: 25px;
 }

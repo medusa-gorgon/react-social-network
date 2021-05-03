@@ -7,7 +7,7 @@ const Users = (props) => {
     <div className={s.users}>
       <Pagination
         currentPage={props.currentPage}
-        totalUsersCount={props.totalUsersCount}
+        totalItemsCount={props.totalUsersCount}
         pageSize={props.pageSize}
         onPageChanged={props.onPageChanged}
       />
