@@ -1,19 +1,13 @@
 import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 import './Normalize.css';
 import './Adjustment.css';
 import Navbar from './components/Navbar/Navbar';
-import News from './components/News/News';
-import Music from './components/Music/Music';
-import Settings from './components/Settings/Settings';
 import { Route, withRouter } from 'react-router-dom';
 import HeadPicture from './components/Header/HeadPicture/HeadPicture.jsx';
-import DialogsContainer from './components/Dialogs/DialogsContainer';
-import UsersContainer from './components/Users/UsersContainer';
-import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import Preloader from './components/common/Preloader';
@@ -21,6 +15,11 @@ import { initializeApp } from './redux/app-reducer';
 import store from './redux/redux-store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import UsersContainer from './components/Users/UsersContainer';
+import { withSuspence } from './hoc/withSuspense';
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
+const Settings = React.lazy(() => import('./components/Settings/Settings'));
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 
 class App extends Component {
   componentDidMount() {
@@ -39,11 +38,9 @@ class App extends Component {
           <Navbar /> {/*state={props.state.messagesPage}*/}
           <div className='app__content'>
             <Route path='/login' render={() => <Login />} />
-            <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
-            <Route path='/messages' render={() => <DialogsContainer />} />
-            <Route path='/news' render={() => <News />} />
-            <Route path='/music' render={() => <Music />} />
-            <Route path='/settings' render={() => <Settings />} />
+            <Route path='/profile/:userId?' render={withSuspence(ProfileContainer)} />
+            <Route path='/messages' render={withSuspence(DialogsContainer)} />
+            <Route path='/settings' render={withSuspence(Settings)} />
             <Route path='/users' render={() => <UsersContainer />} />
           </div>
         </div>
