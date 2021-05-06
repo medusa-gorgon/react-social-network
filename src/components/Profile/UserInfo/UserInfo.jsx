@@ -25,6 +25,13 @@ const UserInfo = (props) => {
     }
     return arr;
   };
+
+  const onMainPhotoSelected = (e) => {
+    if (e.target.files.length) {
+      props.savePhoto(e.target.files[0]);
+    }
+  };
+
   return (
     <div className={s.info}>
       <div className={s.avatar}>
@@ -37,6 +44,7 @@ const UserInfo = (props) => {
             })`,
           }}
         ></div>
+        {props.isOwner && <input type={'file'} onChange={onMainPhotoSelected} />}
       </div>
       <div className={s.desc}>
         <div className={s.name__block}>
