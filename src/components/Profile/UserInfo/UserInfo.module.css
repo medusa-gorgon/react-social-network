@@ -20,13 +20,14 @@
   padding: 20px 20px 10px 20px;
 }
 
-.list {
+.profile__description {
   margin-left: 20px;
   font-size: 16px;
 }
 
 .contact {
   display: flex;
+  padding-left: 15px;
 }
 
 .contact_key {

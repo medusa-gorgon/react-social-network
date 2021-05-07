@@ -1,0 +1,51 @@
+.contact {
+  padding-left: 15px;
+  display: flex;
+}
+
+.item {
+  display: flex;
+}
+
+.field_block {
+  display: flex;
+  align-content: center;
+}
+
+.field {
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.key {
+  padding: 5px;
+}
+
+.name {
+  display: flex;
+  font-size: 30px;
+  padding: 20px 20px 10px 20px;
+}
+.name__block {
+  display: flex;
+  align-content: center;
+}
+
+.button {
+  padding: 0.625rem;
+  min-width: 6.25rem;
+  background-color: #59b6a7;
+  transition: all 0.2s;
+  border-radius: 0.3125rem;
+}
+
+.button:hover {
+  background-color: #433633;
+}
+
+.button__block {
+  padding: 15px 20px 15px 15px;
+  display: flex;
+  justify-content: flex-end;
+}
