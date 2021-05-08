@@ -40,3 +40,9 @@
 .button:hover {
   background-color: #433633;
 }
+
+.captcha {
+  min-width: 200px;
+  width: 300px;
+  height: auto;
+}
