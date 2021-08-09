@@ -1,17 +1,17 @@
 .button {
-  padding: 0.625rem;
-  min-width: 6.25rem;
+  padding: 0.5rem;
+  min-width: 5rem;
   background-color: #59b6a7;
   transition: all 0.2s;
   border-radius: 0.3125rem;
+  color: black;
 }
 
 .button:hover {
   background-color: #433633;
+  color: #e3e0d7;
 }
 
 .button__block {
-  padding: 15px 20px 15px 15px;
   display: flex;
-  justify-content: flex-end;
 }

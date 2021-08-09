@@ -3,6 +3,7 @@ import { createField, Input, Textarea } from '../../common/FormsControls/FormsCo
 import s from './ProfileDataForm.module.css';
 import styles from '../../../components/common/FormsControls/FormsControls.module.css';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
+import Button from '../../common/Button';
 
 const ProfileDataForm = (props) => {
   let addContacts = () => {
@@ -58,9 +59,7 @@ const ProfileDataForm = (props) => {
         </li>
       </ul>
       <div className={s.button__block}>
-        <button className={s.button} type='submit'>
-          Save changes
-        </button>
+        <Button buttonText={'Save changes'} type={'submit'} />
       </div>
     </form>
   );

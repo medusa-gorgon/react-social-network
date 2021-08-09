@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import s from './ProfileStatus.module.css';
+import s from './ProfileStatusWithHooks.module.css';
+import { maxLengthCreator } from '../../../utils/validators/validators';
+import { createField, Input } from '../../common/FormsControls/FormsControls';
 
 const ProfileStatusWithHooks = (props) => {
   let [editMode, setEditMode] = useState(false);
@@ -25,6 +27,20 @@ const ProfileStatusWithHooks = (props) => {
         </div>
       )}
       {editMode && (
+        // createField(
+        //   s.input__block,
+        //   s.input,
+        //   'enter your bio',
+        //   'status',
+        //   'text',
+        //   [maxLengthCreator(15)],
+        //   Input,
+        //   {
+        //     onChange: onStatusChange,
+        //     autoFocus: true,
+        //     onBlur: deactivateEditMode,
+        //     value: status,
+        //   }
         <div className={s.input__block}>
           <input
             onChange={onStatusChange}
@@ -33,6 +49,7 @@ const ProfileStatusWithHooks = (props) => {
             value={status}
             className={s.input}
             type='text'
+            validate={[maxLengthCreator(15)]}
           />
         </div>
       )}

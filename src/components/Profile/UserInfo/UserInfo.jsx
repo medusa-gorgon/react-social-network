@@ -4,6 +4,7 @@ import userPhoto from '../../../assets/images/user.png';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 import ProfileDataForm from './ProfileDataForm';
 import { useState } from 'react';
+import Button from '../../common/Button';
 
 const UserInfo = (props) => {
   let [editMode, setEditMode] = useState(false);
@@ -36,7 +37,14 @@ const UserInfo = (props) => {
             })`,
           }}
         ></div>
-        {props.isOwner && <input type={'file'} onChange={onMainPhotoSelected} />}
+        {props.isOwner && (
+          <div className={s.input__block}>
+            <label for='inputSelect' className={s.selectPhoto}>
+              <input className={s.inputSelect} type={'file'} onChange={onMainPhotoSelected} id='inputSelect' />
+              Select new picture
+            </label>
+          </div>
+        )}
       </div>
       <div className={s.desc}>
         <div className={s.profile__description}>
@@ -91,9 +99,9 @@ const ProfileData = (props) => {
       </div>
       <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
       {props.isOwner && (
-        <button onClick={props.goToEditMode} className={s.edit__button} type='button'>
-          Edit profile
-        </button>
+        <div onClick={props.goToEditMode}>
+          <Button buttonText={'Edit profile'} type={'button'} />
+        </div>
       )}
       <ul className={s.list}>
         <li className={s.item}>

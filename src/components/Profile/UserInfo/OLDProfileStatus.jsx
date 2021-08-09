@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { maxLengthCreator } from '../../../utils/validators/validators';
+import { createField, Input } from '../../common/FormsControls/FormsControls';
 import s from './ProfileStatus.module.css';
 
 class ProfileStatus extends Component {
@@ -39,6 +41,12 @@ class ProfileStatus extends Component {
           </div>
         )}
         {this.state.editMode && (
+          // createField(s.input__block, s.input, 'enter your bio', 'status', 'text', [maxLengthCreator(15)], Input, {
+          //       onChange: this.onStatusChange,
+          //       autoFocus: true,
+          //       onBlur: this.deactivateEditMode,
+          //       value: this.state.status,
+          // }
           <div className={s.input__block}>
             <input
               onChange={this.onStatusChange}
@@ -47,6 +55,7 @@ class ProfileStatus extends Component {
               value={this.state.status}
               className={s.input}
               type='text'
+              validate={[maxLengthCreator(15)]}
             />
           </div>
         )}

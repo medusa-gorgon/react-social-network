@@ -24,29 +24,14 @@
 }
 
 .login__block {
-  display: block;
+  display: flex;
+  align-items: center;
+}
+
+.login__name {
   color: #dae97c;
-  margin: auto 0;
-}
-
-.logInOut {
-  color: #000000;
-  transition: all 0.2s;
-  background-color: #68b8a8;
-  padding: 5px;
-  border-radius: 5px;
-  width: 80px;
-}
-
-.logInOut:hover {
-  /* color: #dae97c; */
-  font-weight: 700;
 }
 
 .logout__span {
-  padding-left: 20px;
-}
-
-.login__link {
-  color: black;
+  padding-left: 10px;
 }

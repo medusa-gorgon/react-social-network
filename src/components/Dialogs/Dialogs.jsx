@@ -7,6 +7,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Textarea } from '../common/FormsControls/FormsControls';
 import { maxLengthCreator, required } from '../../utils/validators/validators';
+import Button from '../common/Button';
 
 const Dialogs = (props) => {
   let dialogsElements = props.messagesPage.dialogsData.map((dialog) => (
@@ -43,9 +44,7 @@ const AddMessageForm = (props) => {
       />
       <div className={s.button__block}>
         <div className={s.button__wrap}>
-          <button className={s.button} type='submit'>
-            Send
-          </button>
+          <Button buttonText={'Send'} type={'submit'} />
         </div>
       </div>
     </form>

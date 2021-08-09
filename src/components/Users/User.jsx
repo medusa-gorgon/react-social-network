@@ -1,6 +1,7 @@
 import s from './Users.module.css';
 import userPhoto from '../../assets/images/user.png';
 import { NavLink } from 'react-router-dom';
+import Button from '../common/Button';
 
 const User = ({ user, ...props }) => {
   return (
@@ -15,25 +16,24 @@ const User = ({ user, ...props }) => {
         <div className={s.profile__button}>
           <div className={s.button__block}>
             {user.followed ? (
-              <button
-                className={s.button}
+              <div
                 disabled={props.followingInProgress.some((id) => id === user.id)}
                 onClick={() => {
                   props.unfollow(user.id);
                 }}
               >
-                Unfollow
-              </button>
+                <Button buttonText={'Unfollow'} type={'submit'} />
+              </div>
             ) : (
-              <button
-                className={s.button}
+              //
+              <div
                 disabled={props.followingInProgress.some((id) => id === user.id)}
                 onClick={() => {
                   props.follow(user.id);
                 }}
               >
-                Follow
-              </button>
+                <Button buttonText={'Follow'} type={'submit'} />
+              </div>
             )}
           </div>
         </div>
@@ -44,10 +44,6 @@ const User = ({ user, ...props }) => {
             <div className={s.name}>{user.name}</div>
           </NavLink>
           <div className={s.status}>{user.status}</div>
-        </div>
-        <div className={s.location}>
-          <div>{'user.location.country'},</div>
-          <div>{'user.location.city'}</div>
         </div>
       </div>
     </div>

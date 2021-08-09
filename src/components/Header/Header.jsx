@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import Button from '../common/Button';
 import s from './Header.module.css';
 
 const Header = (props) => {
@@ -14,20 +15,16 @@ const Header = (props) => {
         </div>
         <div className={s.login__block}>
           {props.isAuth ? (
-            <div>
-              {props.login}
-              <span className={s.logout__span}>
-                <button className={s.logInOut} onClick={props.logout} type='button'>
-                  Log out
-                </button>
+            <div className={s.login__block}>
+              <div className={s.login__name}>{props.login}</div>
+              <span className={s.logout__span} onClick={props.logout}>
+                <Button buttonText={'Log out'} type={'button'} />
               </span>
             </div>
           ) : (
-            <button className={s.logInOut} type='button'>
-              <NavLink className={s.login__link} to={'/login'}>
-                Log in
-              </NavLink>
-            </button>
+            <NavLink className={s.login__link} to={'/login'}>
+              <Button buttonText={'Log in'} type={'button'} />
+            </NavLink>
           )}
         </div>
       </div>

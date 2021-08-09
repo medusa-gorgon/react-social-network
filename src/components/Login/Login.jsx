@@ -6,6 +6,7 @@ import { maxLengthCreator, required } from '../../utils/validators/validators';
 import { createField, Input } from '../common/FormsControls/FormsControls';
 import s from './Login.module.css';
 import styles from '../common/FormsControls/FormsControls.module.css';
+import Button from '../common/Button';
 const maxLength = maxLengthCreator(25);
 const LoginForm = (props) => {
   return (
@@ -27,9 +28,7 @@ const LoginForm = (props) => {
       {props.captchaURL && createField(s.input__block, s.input, 'enter captcha', 'captcha', 'text', [required], Input)}
       {props.error && <div className={styles.formSummaryError}>{props.error}</div>}
       <div className={s.button__block}>
-        <button className={s.button} type='submit'>
-          Log in
-        </button>
+        <Button buttonText={'Log in'} type={'submit'} />
       </div>
     </form>
   );

@@ -30,7 +30,7 @@ class ProfileContainer extends Component {
     return (
       <Profile
         {...this.props}
-        isOwner={!this.props.match.params.userId}
+        isOwner={!this.props.match.params.userId} // match is from withRouter
         profile={this.props.profile}
         status={this.props.status}
         updateStatus={this.props.updateStatus}

@@ -3,7 +3,12 @@
   grid-template-columns: 200px 1fr;
   grid-gap: 10px;
 }
-
+.avatar {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-top: 50px;
+}
 .avatar__img {
   width: 200px;
   height: 200px;
@@ -11,7 +16,7 @@
   background-position: center;
   background-size: cover;
   background-position: center;
-  margin: 10px;
+  /* margin: 10px; */
 }
 
 .name {
@@ -32,4 +37,30 @@
 
 .contact_key {
   font-weight: 600;
+}
+
+.input__block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.inputSelect {
+  position: absolute;
+  left: -9999px;
+}
+
+.selectPhoto {
+  padding: 0.5rem;
+  min-width: 5rem;
+  background-color: #59b6a7;
+  transition: all 0.2s;
+  border-radius: 0.3125rem;
+  color: black;
+}
+
+.selectPhoto:hover {
+  background-color: #433633;
+  color: #e3e0d7;
 }

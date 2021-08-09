@@ -3,6 +3,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { required, maxLengthCreator } from '../../../utils/validators/validators';
+import Button from '../../common/Button';
 import { Textarea } from '../../common/FormsControls/FormsControls';
 import Post from './Post/Post';
 import s from './Posts.module.css';
@@ -52,11 +53,7 @@ const AddNewPostForm = (props) => {
         />
       </div>
       <div className={s.button__block}>
-        <div className={s.button__wrap}>
-          <button className={s.button} type='submit'>
-            Send
-          </button>
-        </div>
+        <Button buttonText={'Send'} type={'submit'} />
       </div>
     </form>
   );
