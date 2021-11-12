@@ -1,6 +1,6 @@
 .dialogs {
   display: grid;
-  grid-template-columns: 3fr 7fr;
+  grid-template-columns: 30% 70%;
 }
 
 .dialogs__items {
@@ -35,15 +35,16 @@
 }
 .form {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 10px 0;
+  flex-wrap: wrap;
 }
 
 /* TEXTAREA */
 .textarea {
   background-color: #c8cdca;
-  width: 90%;
+  width: 400px;
   height: 60px;
   border-radius: 5px;
   padding: 15px;

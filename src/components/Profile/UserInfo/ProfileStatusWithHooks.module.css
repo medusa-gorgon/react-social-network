@@ -13,7 +13,9 @@
   padding: 5px;
 }
 
-.status {
+.status span {
   color: #433633;
-  margin: 0 20px 40px 20px;
+  margin: 0 20px 40px 0;
+  display: flex;
+  flex-wrap: wrap;
 }

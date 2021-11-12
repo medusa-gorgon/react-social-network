@@ -13,7 +13,8 @@ const LoginForm = (props) => {
     <form onSubmit={props.handleSubmit} action='' className={s.form}>
       {createField(s.input__block, s.input, 'email', 'email', 'text', [required, maxLength], Input)}
       {createField(s.input__block, s.input, 'password', 'password', 'password', [(required, maxLength)], Input)}
-      {createField(s.checkbox__block, s.checkbox, null, 'rememberMe', 'checkbox', [], 'input', 'remember me')}
+      {/* {createField(s.checkbox__block, s.checkbox, null, 'rememberMe', 'checkbox', [], 'input', <div className="s.remember_me">remember me</div>)} */}
+      <div className={s.checkbox__block}><input name="rememberMe" className={s.checkbox} type="checkbox" value="" /><div className={s.rememberMe}>remember me</div></div>
       {props.captchaURL && (
         <img src={props.captchaURL} alt='' />
 

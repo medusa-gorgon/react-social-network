@@ -57,7 +57,7 @@ class App extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 const mapStateToProps = (state) => {
@@ -74,7 +74,7 @@ const MainApp = (props) => {
       {/* HashRouter */}
       <Provider store={store}>
         <React.StrictMode>
-          <AppContainer />;
+          <AppContainer />
         </React.StrictMode>
       </Provider>
     </BrowserRouter>

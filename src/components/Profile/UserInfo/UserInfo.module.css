@@ -1,17 +1,18 @@
 .info {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  padding-top: 20px;
+  grid-template-columns: 20rem 1fr;
   grid-gap: 10px;
 }
 .avatar {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
-  padding-top: 50px;
+  align-items: center;
 }
 .avatar__img {
-  width: 200px;
   height: 200px;
+  width: 200px;
   border-radius: 50%;
   background-position: center;
   background-size: cover;
@@ -22,7 +23,7 @@
 .name {
   display: flex;
   font-size: 40px;
-  padding: 20px 20px 10px 20px;
+  padding: 20px 20px 10px 0;
 }
 
 .profile__description {
@@ -63,4 +64,8 @@
 .selectPhoto:hover {
   background-color: #433633;
   color: #e3e0d7;
+}
+
+.list {
+  padding-bottom: 10px;
 }

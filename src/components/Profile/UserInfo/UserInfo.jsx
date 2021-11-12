@@ -98,11 +98,7 @@ const ProfileData = (props) => {
         <div className={s.name}>{props.profile.fullName}</div>
       </div>
       <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
-      {props.isOwner && (
-        <div onClick={props.goToEditMode}>
-          <Button buttonText={'Edit profile'} type={'button'} />
-        </div>
-      )}
+
       <ul className={s.list}>
         <li className={s.item}>
           <div>Looking for a job: {props.profile.lookingForAJob ? 'yes' : 'no'} </div>
@@ -119,6 +115,11 @@ const ProfileData = (props) => {
           <ul className={s.contacts__list}>{addContacts()}</ul>
         </li>
       </ul>
+      {props.isOwner && (
+        <div onClick={props.goToEditMode}>
+          <Button buttonText={'Edit profile'} type={'button'} />
+        </div>
+      )}
     </div>
   );
 };
