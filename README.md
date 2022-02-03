@@ -1,6 +1,7 @@
+# React Social Network
 This project was created following the "React / Redux" practical course in 100 lessons by Dmitry Kuzyuberdin. It is created to show the technical implementation of the used technologies and is not focused on UX/UI.
 
-Packages and libraries used:
+### Packages and libraries used
 
 - react-router-dom
 - react-scripts
@@ -12,10 +13,13 @@ Packages and libraries used:
 - classnames
 - reselect
 
-This "Social Network" project was built using https://social-network.samuraijs.com/ free API.
+This "Social Network" project was built using [social-network.samuraijs.com](https://social-network.samuraijs.com/) free API.
 
-Login details for testing:
+## Login details for testing
+
 Email: free@samuraijs.com
+
 Password: free
 
-Deploy: https://mg-bizarre.github.io/react-social-network/
+## Deploy
+[mg-bizarre.github.io/react-social-network/](https://mg-bizarre.github.io/react-social-network/)
